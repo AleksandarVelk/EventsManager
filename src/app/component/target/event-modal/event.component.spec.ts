@@ -21,20 +21,20 @@ fdescribe('EventModalComponent', () => {
         RouterTestingModule.withRoutes([]),
         SharedModule,
         TranslateModule.forRoot({
-                    loader: {
-                      provide: TranslateLoader,
-                      useClass: TranslateFakeLoader
-                    }
-                  }),
-          NgbModule,
-          FormsModule,
-          ReactiveFormsModule 
-        ],
-      providers: [ConfirmDialogService,TranslateService, NgbActiveModal,
+          loader: {
+            provide: TranslateLoader,
+            useClass: TranslateFakeLoader
+          }
+        }),
+        NgbModule,
+        FormsModule,
+        ReactiveFormsModule
+      ],
+      providers: [ConfirmDialogService, TranslateService, NgbActiveModal,
         NgbModal],
-      declarations: [ EventModalComponent ]
+      declarations: [EventModalComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

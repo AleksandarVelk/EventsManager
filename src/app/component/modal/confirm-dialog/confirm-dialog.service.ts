@@ -5,7 +5,7 @@ import { take } from "rxjs/operators";
 export class ConfirmDialogService {
   private subject = new Subject<any>();
   private confirmSub = new Subject<boolean>();
-  constructor() {}
+  constructor() { }
 
   async confirmThis(
     message: string,

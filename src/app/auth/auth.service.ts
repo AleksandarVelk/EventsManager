@@ -8,11 +8,11 @@ import { User } from "../models/user.model";
   providedIn: "root",
 })
 export class AuthService implements IAuthService {
-  private _isLoggedIn = false;  
+  private _isLoggedIn = false;
   headerOptions: any = null;
   private authHeaders = new HttpHeaders({
     type: 'application/json',
-});
+  });
 
   private _currentUser: User = null;
   // getter and setter for current user
@@ -28,17 +28,14 @@ export class AuthService implements IAuthService {
     this._currentUser = v;
   }
 
- 
+  constructor(private http: HttpClient, private router: Router) { }
 
-  constructor(private http: HttpClient, private router: Router) {}
-
-
-  loginUser(userCredentials: User) {    
-    let  user = JSON.parse(this.getNewUserLocalStorageSession());
+  loginUser(userCredentials: User) {
+    let user = JSON.parse(this.getNewUserLocalStorageSession());
     let credentials = JSON.parse(JSON.stringify(userCredentials));
 
-    if (user.username === credentials.username && user.password === credentials.password) {  
-      this.isAuthenticated = true;    
+    if (user.username === credentials.username && user.password === credentials.password) {
+      this.isAuthenticated = true;
       return true;
     } else {
       return false;

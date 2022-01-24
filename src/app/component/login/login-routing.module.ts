@@ -13,4 +13,4 @@ const signinRoutes: Routes = [
   imports: [RouterModule.forChild(signinRoutes)],
   exports: [RouterModule]
 })
-export class LoginRoutingModule {}
+export class LoginRoutingModule { }

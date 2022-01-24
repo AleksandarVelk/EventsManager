@@ -5,10 +5,10 @@ import { DashboardComponent } from './dashboard.component';
 const dashboardRoutes: Routes = [
     {
         path: '',
-		data: {
-			title: 'Dashboard'
-		},
-		component: DashboardComponent
+        data: {
+            title: 'Dashboard'
+        },
+        component: DashboardComponent
     }
 ];
 
