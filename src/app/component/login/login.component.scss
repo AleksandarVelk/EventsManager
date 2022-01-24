@@ -1,0 +1,12 @@
+main {
+    min-width: 600px;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+}
+
+.errMess {
+    color: red;
+}

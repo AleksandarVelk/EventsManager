@@ -1,0 +1,58 @@
+@import "../../../../variables.scss";
+@import "../../../../includes.scss";
+
+.dropdown-toggle::after {
+  display: none;
+}
+
+.dropdown {
+  width: 7px;
+  height: 13px;
+  @extend %fonts-params;
+  float: right;
+  .dropdown-toggle {
+    height: 30px;
+    display: block;
+    svg {
+      &:hover {
+        g {
+          fill: $secondary-main-color;
+        }
+      }
+    }
+  }
+  .dropdown-menu {
+    a {
+      font-size: 12px;
+      font-weight: 700;
+      color: $secondary-color-grey;
+      &:hover {
+        color: $secondary-main-color;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.dropdown-item {
+  cursor: pointer;
+  color: $secondary-color-grey;
+}
+
+.dropdown-item:hover {
+  color: black;
+  background-color: transparent;
+}
+
+.icon-menu-dots {
+  width: 7px;
+  height: 30px;
+}
+
+a[aria-expanded="true"] {
+  svg {
+    g {
+      fill: $secondary-main-color;
+    }
+  }
+}

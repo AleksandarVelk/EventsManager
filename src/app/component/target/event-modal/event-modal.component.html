@@ -1,0 +1,63 @@
+<div class="modal-header">
+  <h6 class="modal-title" id="modal-basic-title">{{ 'dashboard.createEventBtn' | translate }}</h6>
+  <button type="button" class="close" aria-label="Close" (click)="close()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form [formGroup]="addEditForm" (ngSubmit)="onSubmit()">
+    <div class="form-row">
+      <div class="form-group col-8">
+        <label>{{ 'createEvent.eventName' | translate }} <span>*</span></label>
+        <input type="text" formControlName="name" class="form-control form-control-sm" [style.border-bottom-color]="!addEditForm.get('name').valid && addEditForm.get('name').touched ? '#ff0000' : ''">
+        <span *ngIf="!addEditForm.get('name').valid && addEditForm.get('name').touched" class="help-block">
+                <span *ngIf="addEditForm.get('name').errors['required']">This field is required!</span>
+        </span>
+      </div>
+    </div>
+   
+    
+  <div class="form-row">
+    <div class="form-group col-8">
+      <label>{{ 'dashboard.description' | translate }} <span>*</span></label>
+      <textarea type="text" formControlName="description" class="form-control form-control-sm" [style.border-bottom-color]="!addEditForm.get('description').valid && addEditForm.get('description').touched ? '#ff0000' : ''"></textarea>
+      <span *ngIf="!addEditForm.get('description').valid && addEditForm.get('description').touched" class="help-block">
+              <span *ngIf="addEditForm.get('description').errors['required']">This field is required!</span>
+      </span>
+    </div>
+  </div>
+
+
+    <div class="form-row">
+      <div class="form-group col-4">
+        <label>{{ 'dashboard.date' | translate }}<span>*</span></label>
+        <div class="form-inline">
+          <div class="input-group">
+            <input type="text" placeholder="dd/mm/yyyy" class="form-control form-control-sm" formControlName="startDate" ngbDatepicker #d1="ngbDatepicker" (ngModelChange)="onSelectDate($event)" >
+            <div class="input-group-append">
+              <button class="calendarBtn" (click)="d1.toggle()" type="button">
+                <img src="assets/images/targets/datepicker.svg">
+              </button>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+
+    </div>    
+   
+    <hr>
+    <div class="form-row">
+      <div class="form-group col-6">
+        <span *ngIf="!addEditForm.valid && submited" class="help-block">Please fill mandatory data
+          </span>
+      </div>
+      <div class="col-6 rightAllignment">
+        <button type="button" class="btn btn-primary btn-sm btnCancel" (click)="close()">{{ 'createEvent.cancel' | translate }}</button>
+        <button type="button" type="submit" class="btn btn-primary btn-sm btnCreate" [disabled]="!addEditForm.valid">
+          {{translateKeyword() | uppercase}}
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

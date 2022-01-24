@@ -1,0 +1,23 @@
+{
+    "general": {
+        "event": "Event",
+        "eventType": "type",
+        "select": "Select"
+    },
+    "dashboard": {
+        "title": "Dashboard",
+        "createEventBtn": "New Event",
+        "name": "Name",
+        "description": "Description",
+        "date": "Date"
+    },
+    "createEvent": {
+        "createEventTitle": "Create Event",
+        "eventName": "Event Name",
+        "remove": "Delete",
+        "cancel": "Cancel",
+        "create": "Create",
+        "update": "Update"
+
+    }
+}

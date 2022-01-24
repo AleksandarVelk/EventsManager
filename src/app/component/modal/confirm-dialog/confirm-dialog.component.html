@@ -1,0 +1,39 @@
+<div *ngIf="message" class="modal" tabindex="-1" role="dialog">  
+  <div class="modal-dialog custom-alert" role="document">  
+      <div class="modal-content">  
+
+        <div class="modal-header">          
+          <button type="button" class="close_btn" data-dismiss="modal" (click)="message.noFn()" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">  
+            <div class="row">
+                <div class="col-md-12 text-center"> 
+                  <h4 class="modal-title">{{ truncate(message.fileName, 25, false, '...') }}</h4>
+                </div>
+            </div>
+            <div class="row">  
+                <div class="col-md-12 text-center">  
+                    <p class="text-center confirm-message" [style.color] = "message.type === 'approve' ? '#b82929' : ''" >{{message.text}}</p>  
+                </div>    
+            </div>  
+        </div> 
+        <div class="modal-footer">
+            <div *ngIf="message.type === 'approve'"  class="container">
+              <div class="col-md-12 text-center">
+                  <button type="button" (click)="message.noFn()" class="aprove_btn">Ok</button>
+              </div>
+            </div>
+            <div *ngIf="message.type === 'confirm'" class="row">
+              <div class="col-md-6 text-center">
+                  <button type="button" (click)="message.noFn()" class="cancel_btn" data-dismiss="modal">Cancel</button>
+              </div>
+              <div class="col-md-6 text-center">
+                  <button type="button" (click)="message.yeFn()" class="done_btn">{{message.nameBtn}}</button>
+              </div>
+            </div>
+        </div>  
+      </div>  
+  </div>  
+</div>  

@@ -1,0 +1,60 @@
+<div class="dropdown show">
+  <!-- <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+     aria-expanded="false">
+    <svg class="icon-menu-dots">
+      <g fill="#e2e2e2" fill-rule="evenodd">
+        <circle cx="3.5" cy="3.5" r="3.5"/>
+        <circle cx="3.5" cy="15.5" r="3.5"/>
+        <circle cx="3.5" cy="26.5" r="3.5"/>
+      </g>
+    </svg>
+  </a>
+  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+    <ng-container *ngFor="let item of combineArray">
+      <a
+        *ngIf="!item.download"
+        class="dropdown-item"
+        (click)="returnModeObj($event, item.func, this.getItem, item.name)">
+        {{item.name}}
+      </a>
+      <a
+        *ngIf="item.download"
+        class="dropdown-item"
+        [attr.href]="imageUrl"
+        [attr.download]="item.download">
+        {{item.name}}
+      </a>
+    </ng-container>
+  </div> -->
+
+  <div ngbDropdown class="dropdown">    
+    <a class="dropdown-toggle" ngbDropdownToggle aria-expanded="false" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+     aria-expanded="false">
+    <svg class="icon-menu-dots">
+      <g fill="#e2e2e2" fill-rule="evenodd">
+        <circle cx="3.5" cy="3.5" r="3.5"/>
+        <circle cx="3.5" cy="15.5" r="3.5"/>
+        <circle cx="3.5" cy="26.5" r="3.5"/>
+      </g>
+    </svg>
+  </a>
+    <ul ngbDropdownMenu aria-labelledby="dropdownMenuButton1">
+      <li *ngFor="let item of combineArray">
+        <a
+          *ngIf="!item.download"
+          class="dropdown-item"
+          (click)="returnModeObj($event, item.func, this.getItem, item.name)">
+          {{item.name}}
+        </a>
+        <a
+          *ngIf="item.download"
+          class="dropdown-item"
+          [attr.href]="imageUrl"
+          [attr.download]="item.download">
+          {{item.name}}
+        </a>
+      </li>
+    </ul>
+  </div>
+  
+</div>

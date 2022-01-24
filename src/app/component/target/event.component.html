@@ -1,0 +1,65 @@
+<div class="row">
+  <div class="col-10">
+  </div>
+  <div class="col-2 text-right pb-3">
+    <button type="button" class="btn btn-success" (click)="addNewChild(null, true)">{{ 'dashboard.createEventBtn' | translate }}</button>
+  </div>
+</div>
+
+
+
+
+
+<div class="row">
+  <!-- column -->
+  <div class="col-12">
+      <div class="card">
+          <div class="card-body">
+              <h4 class="card-title">Events List</h4>
+          </div>
+          <div class="table-responsive">
+              <table class="table table-hover">
+                  <thead>
+                      <tr>
+                          <th class="border-top-0">{{ 'dashboard.name' | translate }}</th>
+                          <th class="border-top-0">{{ 'dashboard.description' | translate }}</th>
+                          <th class="border-top-0">{{ 'dashboard.date' | translate }}</th>
+                          <th class="border-top-0"></th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr *ngFor="let item of eventsList | slice: (page-1) * pageSize : page * pageSize">
+                          
+                          <td class="txt-oflo">{{item.name}}</td>
+                          <td><span class="txt-oflo">{{item.description}}</span> </td>
+                          <td class="txt-oflo">{{item.startDate | date}}</td>
+                          <td><span class="font-medium">
+                            <event-drop-down-dots
+                            [getItem]="item"
+                            [menuItems]="menuArrayItems"
+                            (selectedVal)="returnMod($event)">
+                          </event-drop-down-dots>
+                          </span></td>
+                      </tr>                        
+                  </tbody>
+              </table>
+          </div>
+      </div>
+  </div>
+</div>
+
+<div class="possition_pagination">
+  <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize" (pageChange)="getDataPerStep();">
+  </ngb-pagination>
+</div>
+
+
+<select class="custom-select" style="width: auto" [(ngModel)]="pageSize" (ngModelChange)="getDataPerStep();">
+  <option [ngValue]="2">2 items per page</option>
+  <option [ngValue]="4">4 items per page</option>
+  <option [ngValue]="6">6 items per page</option>
+</select>
+
+
+
+  

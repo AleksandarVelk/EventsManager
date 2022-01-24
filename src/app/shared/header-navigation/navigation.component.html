@@ -1,0 +1,37 @@
+<!-- ============================================================== -->
+<!-- toggle and nav items -->
+<!-- ============================================================== -->
+
+<!-- ============================================================== -->
+<!-- Right side toggle and nav items -->
+<!-- ============================================================== -->
+<ul class="navbar-nav float-right">
+    <li class="nav-item dropdown"  placement="bottom-right">
+        <select class="form-control nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic dropdown-toggle" [(ngModel)]="selectLang" name="selectLang" (change)="setTransLanguage()">
+            <option *ngFor="let lang of TransLang" value="{{lang}}">{{ lang }}</option>
+            </select>
+        <!-- <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)" ngbdropdowntoggle="">Translate</a> -->
+    </li>
+ 
+    <!-- ============================================================== -->
+    <!-- User profile and search -->
+    <!-- ============================================================== -->
+    <li class="nav-item dropdown" ngbDropdown placement="bottom-right">
+        <a ngbDropdownToggle class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="javascript:void(0)" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <img src="assets/images/users/d3.jpg" alt="user" class="rounded-circle" width="40">
+        </a>
+        <div class="dropdown-menu user-dd" ngbDropdownMenu>
+            <span class="dropdown-item">
+                <i class="ti-user m-r-5 m-l-5"></i> {{ user.firstname }} {{ user.lastname }}</span>          
+            <span class="dropdown-item">
+                <i class="ti-email m-r-5 m-l-5"></i> {{user.email}} </span>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="javascript:void(0)" (click)="logout()">
+                <i class="fa fa-power-off m-r-5 m-l-5"></i> Logout</a>
+            <div class="dropdown-divider"></div>
+        </div>
+    </li>
+    <!-- ============================================================== -->
+    <!-- User profile and search -->
+    <!-- ============================================================== -->
+</ul>

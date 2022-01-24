@@ -1,0 +1,23 @@
+{
+    "general": {
+        "event": "Настан",
+        "eventType": "тип",
+        "select": "Одбери"
+    },
+    "dashboard": {
+        "title": "Работен Простор",
+        "createEventBtn": "Нов Настан",
+        "name": "Име",
+        "description": "Опис",
+        "date": "Дата"
+    },
+    "createEvent": {
+        "createEventTitle": "Креирај Настан",
+        "eventName": "Име на Настан",
+        "remove": "Избриши",       
+        "cancel": "Назад",
+        "create": "Креирај",
+        "update": "Измени"
+
+    }
+}

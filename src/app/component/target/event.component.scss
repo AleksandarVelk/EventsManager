@@ -1,0 +1,20 @@
+@import "../../../variables.scss";
+@import "../../../includes.scss";
+
+.table-responsive {
+  overflow: unset;
+}
+
+.possition_pagination {
+  margin-top: 10px;
+  ngb-pagination ::ng-deep ul > li:not(.active) > a {
+    //background-color: red !important;
+    color: #09b626;
+}
+
+  ngb-pagination ::ng-deep ul > li.active > a {
+    background-color: #09b626 !important;
+    border-color: #068d1c !important;
+}
+}
+   
